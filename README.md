@@ -14,17 +14,17 @@ if ( !class_exists( 'WPS_Enforcer' ) )
 
 2. Place the following inside the class constructor method (typically: function __construct() {}) in any class, usually an abstract class.
 
-For classes with public properties OR with a public static get_instance() method:
-```php
-$child = get_called_class();
-WPS_Enforcer::add( __CLASS__, $child );
-```
-
-For classes with protected or private properties:
-```
-$child = get_called_class();
-WPS_Enforcer::add( __CLASS__, $child, $this );
-```
+    For classes with public properties OR with a public static get_instance() method:
+    ```php
+    $child = get_called_class();
+    WPS_Enforcer::add( __CLASS__, $child );
+    ```
+    
+    For classes with protected or private properties:
+    ```
+    $child = get_called_class();
+    WPS_Enforcer::add( __CLASS__, $child, $this );
+    ```
 
 3. In base class, set the value of the constant and/or property to `abstract`.
 
